@@ -14,6 +14,7 @@ This records participation and mathematical work. It does not claim that P vs NP
 | L-lib-123 | Normal desk assignment on November 23, 2026 at 19:26:32 UTC | Feasibility research only. The exact statement elaborated and two supporting sanity lemmas checked locally. No proof or counterexample of the target was found, no PR was submitted, and the desk confirmed release as missing_lemma. This is not accepted project credit. |
 | L-meta-904 | [Already accepted full proof in PR #1970](https://github.com/brilliant-hq/pequalnp-proofs/pull/1970#issuecomment-7112542218) | A normal assignment was returned as stale after checking the authoritative verdict before any proof work. No submission or credit claimed. |
 | L-meta-962 | [Preserved checked partial research](https://github.com/SanThought/pequalnp-proofs/blob/main/Partial962.lean) | The exact target was not proved. General signature and core-size lemmas checked locally; the assignment was released as missing_lemma after the feasibility window. No upstream PR or accepted credit. |
+| L-meta-1321 | [Checked pivot-compression partial result](https://github.com/SanThought/pequalnp-proofs/blob/main/PivotCompression1321.lean) | The exact shared-circuit count was not proved. Each pivot set can be compressed to at most three lines without changing which points miss a pivot. No upstream PR or accepted credit. |
 
 The [automatic closure comment on PR #888](https://github.com/brilliant-hq/pequalnp-proofs/pull/888#issuecomment-7105419234) states that another proof had already merged. That public PR is evidence of participation even though it did not merge.
 
@@ -46,6 +47,14 @@ The preserved file proves that, under the partial-function separation promise an
 This does not prove the assigned five-gate lower bound. Pendant-vertex reduction, sharper finite classification, and checked certificates remain missing. The published source checked locally with Lean exit code 0, and the core-bound axiom audit lists only `propext`, `Classical.choice` and `Quot.sound`. Published source SHA-256: `87c20be6bfd23ad74671f03b50b38f6b8965e202261a7c1b9a04b64008a1fc42`.
 
 Some monotonicity proof structure was adapted from the project's [Apache-2.0 source L-meta-562](https://github.com/brilliant-hq/pequalnp-proofs/blob/main/lean/PEqualNP/Outside/L_meta_562.lean); the graph-specific [L-meta-635 proof](https://github.com/brilliant-hq/pequalnp-proofs/blob/main/lean/PEqualNP/Outside/L_meta_635.lean) supplied a signature-method lead. No novelty claim is made. The result is preserved research, not an upstream accepted contribution or a submission-format proof of L-meta-962.
+
+## L-meta-1321 partial research
+
+A normal desk request returned this frontier assignment. Its exact statement elaborated in the retained Lean environment, but the neighboring one-pivot and bounded-multiplicity arguments do not prove it. In particular, the target supplies no bounded-multiplicity assumption across the selected wires.
+
+The preserved partial file proves that every pivot set in a rectangle-free incidence graph has a subset of at most three lines with the same missing-pivot predicate at every point. A family-level corollary preserves that predicate for each wire and shows that the smaller sets inherit the relevant soundness hypothesis. This does not prove the assigned bound `192 * (size + J) + 8 * N`, and does not establish bounded multiplicity across wires.
+
+The final published source compiled locally with Lean 4.36.0, exit code 0. Both axiom audits list only `propext`, `Classical.choice` and `Quot.sound`. Source SHA-256: `abf3ad067f3b40611b9ac5c30687185f8adc8a35700bcb08533af62554d106ef`. This is preserved research, with no novelty, upstream acceptance, or contribution-credit claim.
 
 ## Project sources
 
