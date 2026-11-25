@@ -1,5 +1,7 @@
 # L-meta-3576 partial notes, 2026-11-24 (UNVERIFIED, no proof, not a submission)
 
+CORRECTION: the words "exhaustive", "for every", "strong evidence" and "unlikely" below overstated the result. See the Correction section; the original text is kept unchanged otherwise.
+
 Row: block inequality for independent sets covering the non-adjacent pairs of a 4-cycle-free bipartite graph. Claim: edges + vertex cover number + 1 <= sum over sets of (n - size). The row was not leased by us; this is advance preparation only.
 
 ## What was established (computation, not a proof)
@@ -12,9 +14,18 @@ The bound is tight (slack 0) on double stars: two adjacent centers, one with all
 - A counterexample to this row (the negation row) is unlikely on small graphs.
 - A proof must be tight on double stars, so any argument that loses a constant will fail. The desk sketch's route (c(v) = number of sets missing v; c(u) + c(v) >= k on each edge) is consistent with the tight cases but gives no bound by itself.
 
+## Correction (2026-11-24, 23:05 Bogota)
+
+The first version of this note said the result was "strong evidence" and that a counterexample was "unlikely". Those statements were not supported and are withdrawn. What was actually tested:
+
+- One representative graph per class of a coarse degree-based invariant, for the side sizes listed above. The invariant is not an isomorphism test, so some non-isomorphic graphs were merged and others were not examined. The graph counts printed per case count invariant classes, not graphs.
+- Each instance was a 0/1 integer program. Results were kept only when the solver reported status 0 (optimal). Infeasible programs (hypotheses unsatisfiable for that graph) were skipped and not counted. The optimum was compared by rounding the floating-point objective; that rounding was not independently certified.
+- No violation appeared among those tested representatives. Nothing follows about untested graphs, larger sizes, or the truth of the row.
+- The tight examples (slack 0) were double stars; this describes tested instances only.
+
 ## Not done
 
-No Lean proof, no induction argument that closes. The check script is below.
+No Lean proof, no induction argument that closes. Work on this row is dropped for now. The check script is below.
 
 ```python
 import itertools, sys, time
